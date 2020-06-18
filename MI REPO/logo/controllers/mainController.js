@@ -44,21 +44,21 @@ const mainController = {
         let errors = validationResult(req);
         let usersJSON = fs.readFileSync('./data/users.json',{encoding:'utf-8'})
         usersJS = JSON.parse(usersJSON);
-        let usuarioAlLoguearse = false
+        let userLog = false
         usersJS.forEach((users) => {
-            if(users.email == req.body.email) {
-                if(users.password == req.body.password) {
-                    usuarioAlLoguearse = users; 
-                    req.session.usuarioLoguedo = usuarioAlLoguearse;
-                    req.session.userName = users.first_name;
-                    req.locals.userName = req.session.userName;
+            if(users.email == req.body.email && users.password == req.body.password) {
+                    userLog = users; 
+                    req.session.userLog = userLog;
+                    console.log(req.session.userLog)
+                    console.log(userLog)
+                    res.locals.userLog = userLog;
+                    console.log(res.locals.userLog)
                     res.redirect('/')
-                }
             }
 
         });
 
-        if(usuarioAlLoguearse == false) {
+        if(userLog == false) {
             return res.render('login', {errors : [
                 {msj : "Contraseña o email invalido"}
             ]});

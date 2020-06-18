@@ -6,11 +6,13 @@ var logger = require('morgan');
 var methodOverride =  require('method-override');
 let session = require("express-session");
 
+
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var carritoRouter = require('./routes/carrito');
 var productsRouter = require("./routes/products")
 var administRouter = require("./routes/administ");
+const e = require('express');
 
 var app = express();
 
@@ -25,6 +27,13 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride('_method'));
 app.use(session({secret : "Secreto"}));
+
+
+app.use(function (req, res, next) {
+  res.locals.userLog = req.session.userLog
+  next();
+})
+
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);

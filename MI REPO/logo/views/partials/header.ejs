@@ -24,7 +24,11 @@
       <div class ='botonera-izquierda col-1'><a href='/products/genero/mujer/' class= 'buttons'>MUJER</a></div>
       <div class ='botonera-izquierda-hombre col-1'><a href='/products/genero/hombre/' class= 'buttons'>HOMBRE</a></div>
       <div class ='botonera-izquierda col-1'><a href='/products/sale/si'class= 'buttons'>SALE</a></div>
-      <div class ='botonera-izquierda col-1'><a href='/users/login/'class= 'buttons'><%=userName%></a></div>
+      <% if(userLog == false) { %>
+        <div class ='botonera-izquierda col-1'><a href='/users/login/'class= 'buttons'>INGRESAR</a></div>
+      <%} else {%>
+        <div class ='botonera-izquierda col-1'><a href='/users/login/'class= 'buttons'><%=userLog.first_name%></a></div>
+      <%}%>
       <div class ='barrabuscadora  offset-2 col-3'>
         <div class='row'> 
           <div class='searchitems shopbag col-1'><a href='/carrito/'><svg class="bi bi-bag" width="2em" height="2em" viewBox="0 0 16 16" fill="white" xmlns="http://www.w3.org/2000/svg">
@@ -50,6 +54,8 @@
     
     
     </div>
+
+    <script src="front.js"></script>
 
 </body>
 </html>

@@ -102,6 +102,12 @@ body {
   
   
   }
+
+  .buttonsjs {
+    font-size: 150%;
+    color:white;
+    text-align: center;
+  }
   div.botonera-izquierda.col-1{
     margin-left: 23px;
     padding-left: 2px;

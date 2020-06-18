@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="/stylesheets/administ.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                <div class="offset-4 col-4 offset-4">
+                    <h2>Cargar productos</h2>
+                </div>
+                <section class="caja offset-4 col-4 offset-4">
+                    <form action="/administrador/" method="POST"> 
+                        <label class="col-12" for="foto">Ingresar ruta de la foto:</label>
+                        <input class="col-12" type="text" name="foto">
+                        <label class="col-12" for="producto">Producto:</label>
+                        <input class="col-12" type="text" name="producto">
+                        <label for="precio">Precio:</label>
+                        <input class="col-12" type="text" name="precio">
+                        <label for="producto">Categoria: </label>
+                        <input class="col-12" type="text" name="categoria">
+                        <label class="col-6" for="producto">Sexo: </label>
+                        <select class="col-6" name="sexo" id="">
+                            <option value="hombre">hombre</option>
+                            <option value="mujer">mujer</option>
+                        </select>
+                        <label class="Sale" for="producto">Sale?</label>
+                            <input type="radio" name="sale" value="si">Si<input type="radio" name="sale" value="no">No
+                        
+                        <label class="col-12" for="Talle">Talles disponibles:</label>
+                        <input class="col-1" type="checkbox" name="Talles" value="XL">XL 
+                        <input class="col-1" type="checkbox" name="Talles" value="L"> L
+                        <input class="col-1" type="checkbox" name="Talles" value="M"> M
+                        <input class="col-1" type="checkbox" name="Talles" value="S"> S
+                        <input class="col-1" type="checkbox" name="Talles" value="XS"> XS
+                        <button class="col-12" type="submit">Cargar</button>
+                    </form>
+                </section>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

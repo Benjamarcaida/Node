@@ -1,0 +1,84 @@
+[
+    {
+        "id": 1,
+        "name": "Camisa",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate perferendis facere quae distinctio obcaecati, esse a iusto fugit debitis aspernatur beatae sit atque ex saepe quibusdam quisquam commodi temporibus consequatur.",
+        "image": "/images/Camisa.jpg",
+        "category": "Camisas",
+        "sizes": [
+            "XL",
+            "L",
+            "M",
+            "S",
+            "XS"
+        ],
+        "gender": "hombre",
+        "price": "2.200",
+        "sale": "no"
+    },
+    {
+        "id": 2,
+        "name": "Vestido animal print",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate perferendis facere quae distinctio obcaecati, esse a iusto fugit debitis aspernatur beatae sit atque ex saepe quibusdam quisquam commodi temporibus consequatur.",
+        "image": "/images/Mujer1.jpg",
+        "category": "Vestidos",
+        "sizes": [
+            "XL",
+            "L",
+            "XS"
+        ],
+        "gender": "mujer",
+        "price": "2.200",
+        "sale": "no"
+    },
+    {
+        "id": 3,
+        "name": "Campera militar",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate perferendis facere quae distinctio obcaecati, esse a iusto fugit debitis aspernatur beatae sit atque ex saepe quibusdam quisquam commodi temporibus consequatur.",
+        "image": "/images/Mujer2.jpg",
+        "category": "Abrigos",
+        "sizes": [
+            "XL",
+            "L",
+            "M",
+            "XS"
+        ],
+        "gender": "mujer",
+        "price": "2.200",
+        "sale": "no"
+    },
+    {
+        "id": 4,
+        "name": "Cardigan",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate perferendis facere quae distinctio obcaecati, esse a iusto fugit debitis aspernatur beatae sit atque ex saepe quibusdam quisquam commodi temporibus consequatur.",
+        "image": "/images/Mujer3.jpg",
+        "category": "Abrigos",
+        "sizes": [
+            "XL",
+            "L",
+            "M",
+            "S",
+            "XS"
+        ],
+        "gender": "mujer",
+        "price": "2.200",
+        "sale": "no"
+    },
+    {
+        "id": 5,
+        "name": "Remera gris 09",
+        "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate perferendis facere quae distinctio obcaecati, esse a iusto fugit debitis aspernatur beatae sit atque ex saepe quibusdam quisquam commodi temporibus consequatur.",
+        "image": "/images/Remera.jpg",
+        "category": "Remeras",
+        "sizes": [
+            "XL",
+            "L",
+            "M",
+            "S",
+            "XS"
+        ],
+        "gender": "hombre",
+        "price": "2.200",
+        "sale": "si"
+    }
+]

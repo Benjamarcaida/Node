@@ -1,0 +1,145 @@
+.fotito {
+    width: 70%;
+
+    margin-top: 32px;
+    border: 1px black solid;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+ul li {
+    display: inline-block;
+    margin-right: 20px;
+    font-size: 20px;
+}
+
+ul {
+    padding-left: 0px;
+    margin-left: 0px;
+    margin-bottom: 30px;
+}
+
+.circulo {
+    background-color: grey;
+    width: 50px;
+    display: inline-block;
+    border-radius: 100%;
+    border: black 1px solid;
+    margin-bottom: 30px;
+    margin-right: 10px;
+}
+
+.circulo2 {
+    background-color: darkgreen;
+    width: 50px;
+    display: inline-block;
+    border-radius: 100%;
+    border: black 1px solid;
+    margin-bottom: 30px;
+}
+
+.cora {
+    padding-left: 0px;
+    padding: 0%;
+    font-size: 20px;
+    padding-right: 0%;
+}
+
+.barrita {
+    display: inline-block;
+}
+
+h2 {
+    margin-top: 30%;
+    margin-bottom: 40px;
+    margin-left: 10px;
+    font-size: 40px;
+}
+
+.precio {
+    font-size: 25px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    color: gray;
+
+}
+
+.talle {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.comprarB {
+    width: 100%;
+    background-color: grey;
+    color: white;
+    border: 2px solid grey;
+    border-radius: 5%;
+}
+
+.comprarB:hover {
+    border: 2px solid white;
+        
+}
+
+.mini {
+    width: 100%;
+    margin-left: 20px;
+    margin-top: 32px;
+    border: 1px black solid;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.comprar {
+    padding-left: 0px;
+}
+
+.partes {
+    background-color: lightcoral;
+    padding-left: 10%;
+    color: white;
+}
+
+.addTo {
+    background-color: lightcoral;
+    color: white;
+    border: lightcoral 0.3px solid;
+    margin-bottom: 5%;
+    padding: 0%;
+    margin-top: 28.5%;
+    margin-left: 3.5%;
+}
+
+.addTo:hover {
+    color: black;
+}
+
+.cora {
+    margin-top: 28%;
+    margin-left: 3.5%;
+}
+
+
+@media (max-width: 576px) {
+    .fotito {
+        width: 50%;
+
+    }
+
+    .mini {
+        width: 100%;
+        margin: 0%;
+        margin-bottom: 5%;
+    }
+
+    .contMini {
+        padding: 0%;
+        margin: 0%;
+    }
+
+    .contFotito {
+        padding: 0%;
+        margin: 0%;
+    }
+}

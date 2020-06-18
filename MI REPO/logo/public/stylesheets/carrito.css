@@ -1,0 +1,84 @@
+header {
+     background-color: green;
+     margin: none;
+}
+
+.fondo {
+    background-color: rgb(57, 56, 56);
+    padding: 10px;
+}
+
+.container {
+    display: flex;
+    padding: 20px;
+    flex-wrap: wrap;
+    text-align: center;
+    background-color: white;
+}
+
+.img {
+    max-width: 300px;
+    max-height: 350px;
+    width: 100%;
+    height: auto;
+}
+
+.fa-heart {
+    font-size: 25px;
+    padding-top: 20px;
+   color: black;
+}
+
+.nombre-producto {
+    color: black;
+    text-decoration: none;
+}
+
+.descripcion {
+    text-align: center;
+    padding-top: 10px;
+
+}
+
+.precio-de-arriba {
+    padding-top: 15px;
+}
+
+.cantidad {
+    padding-top: 20px;
+    text-align: center;
+}
+
+.el-cuadro {
+    border: 1px solid black;
+}
+
+
+.buttons {
+    padding-top: 45px;
+}
+
+.btn {
+    margin: 7px
+}
+
+.precios {
+    margin-top: 50px;
+    background-color: lightgray;
+}
+
+.precio-item {
+    display: flex;
+    border-bottom: 1px solid black;
+    margin-top: 10px; 
+    
+}
+
+.precio-total {
+    margin-top: 10px;
+}
+
+.comprar {
+    margin-top: 30px;
+    padding: 10px;
+}

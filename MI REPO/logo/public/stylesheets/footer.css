@@ -1,0 +1,67 @@
+.base {
+    background-color: rgb(63, 62, 62);
+    color: white;
+    height: 360px;
+}
+
+h2 {
+    color: azure;
+}
+
+.info {
+    text-align: center;
+}
+
+.fb {
+    max-width: 40px;
+    max-height: 40px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.inst {
+    max-width: 45px;
+    max-height: 45px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.tw {
+    max-width: 40px;
+    max-height: 40px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.hs {
+    max-width: 45px;
+    max-height: 45px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.sm {
+    max-width: 45px;
+    max-height: 45px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.ct {
+    max-width: 45px;
+    max-height: 45px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+
+
+label {
+    margin-left: 15px;
+}
+
+.parte2 {
+    height: 100px;
+    background-color: black;
+    padding-top: 20px;
+}

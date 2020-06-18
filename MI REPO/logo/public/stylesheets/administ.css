@@ -1,0 +1,14 @@
+.caja {
+    
+    border: 2px solid black;
+    padding: 20px;
+    background-color: lightgrey;
+}
+
+h2 {
+    margin-top: 100px;
+}
+
+.Sale {
+    margin-left: 50px;
+}

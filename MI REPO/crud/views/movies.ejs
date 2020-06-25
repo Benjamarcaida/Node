@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/movies/create" method="POST">
+        <% if (typeof errors != "undefined") { %>
+            <ul>
+            <% errors.forEach(function(errors) { %>
+                <li><%=errors.msg%></li>
+            <% }) %>
+            </ul>
+        <% } %>
+        title:
+        <input type="text" name="title"> <br>
+        length:
+        <input type="text" name="length"> <br>
+        release_date:
+        <input type="text" name="release_date"> <br>
+        awards:
+        <input type="text" name="awards"> <br>
+        rating:
+        <input type="text" name="rating"> <br>
+        Genero:
+            <select name="genre_id" id="">
+                <% generos.forEach(function(generos) { %>
+                    <option class="col-5" value="<%=generos.id%>"><%=generos.name%></option> <br>
+                <% }) %>
+            </select> <br>
+        <button class="col-12" type="submit">CARGAR</button>
+    </form>
+</body>
+</html>

@@ -14,57 +14,65 @@
     
     <div class="container-fluid">
         <div class="row">
-        <section class="col-xs-12 col-md-5 col-lg-6">
+        <section class="col-xs-12 col-md-5 col-lg-7">
             <div class="row">
-            <section class= "contMini col-xs-2 col-2 offset-1">
+            <section class= "contMini col-xs-12 col-2 offset-1">
                 <div class="row">
                 <section class="col-xs-2 col-lg-10">
-                    <img class="mini" src= <%=detail.foto%> alt="">
+                    <img class="mini miniTop" src= <%= detail.image %> alt="">
                 </section>
                 <section class="col-xs-2 col-lg-10">
-                    <img class="mini" src=<%=detail.foto%> alt="">
+                    <img class="mini" src=<%= detail.image %> alt="">
                 </section>
                 <section class="col-xs-2 col-lg-10">
-                    <img class="mini" src=<%=detail.foto%> alt="">
+                    <img class="mini" src=<%= detail.image %> alt="">
                 </section>
                 </div>
             </section>
             <section class="contFotito col-xs-2 col-md-9 col-lg-9">
             <div class="row">
                 
-                <img class="fotito col-xs-2 col-lg-8" src= <%=detail.foto%> alt="Campera">
+                <img class="fotito col-xs-2 col-lg-8" src= <%= detail.image %> alt="Campera">
             </div>
             </section>
             </div>
         </section>
-            <section class="partes col-xs-12 col-lg-6">
+            <section class="partes col-xs-12 col-lg-5">
                 <div class="row">
-                <article class="col-12">
-                    <h2><%=detail.nombre %></h2>
+                <article class="col-5 title">
+                    <div class="row">
+                    <h2 class="title col-12"><%= detail.name %></h2>
+                    </div>
                 </article>
-                <article class="precio col-12">$<%=detail.precio%></article>
-                <article class="talle col-12">TALLE</article>
+                <article class="precio col-4">$<%= detail.price %></article>
+                <article class="talle col-10">TALLE</article>
                 <article class="col-12">
                     <ul>
-                        <% detail.talles.forEach(function(talle){ %>
-                            <strong><li><%=talle%></li></strong>
-                       <% })%>
+                        <% detail.sizes.forEach(function(talle) { %>
+                            <strong><li><%= talle %></li></strong>
+                       <% }) %>
                         
                     </ul>
                 </article>
-                <div class="col-12">
-                <article class="circulo col-1">.</article>
-                <article class="circulo2 col-1">.</article>
+                <div class="col-1">
+                    <svg width="10em" height="1em" viewBox="0 0 16 16" class="circulo circulos bi bi-circle-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <circle class="circulo circulos" cx="8" cy="8" r="8"/>
+                      </svg>
+                </div>
+                <div class="col-1">
+                    <svg width="7em" height="1em" viewBox="0 0 16 16" class=" circulos bi bi-circle-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <circle class="circulo2 circulos" cx="8" cy="8" r="8"/>
+                      </svg>
                 </div>
                 <div class="col-12">
              <div class="row">
-                <button class="addTo col-2"> ADD TO <svg class="bi bi-heart-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <button class="addTo addCora col-2"> ADD TO <svg class="bi bi-heart-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" clip-rule="evenodd"/>
                   </svg>
                 </button>
                 <article class="cora"> <p>|</p></article>
                     <button class="addTo col-2">
-                    ADD TO <svg class="bi bi-bag-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    ADD TO <svg class="bolsa bi bi-bag-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <path d="M1 4h14v10a2 2 0 01-2 2H3a2 2 0 01-2-2V4zm7-2.5A2.5 2.5 0 005.5 4h-1a3.5 3.5 0 117 0h-1A2.5 2.5 0 008 1.5z"/>
                       </svg>
                     </button>
@@ -72,7 +80,7 @@
                 </div>
                 <p></p>
                 <div class="col-12">
-                    <article class="comprar col-6">
+                    <article class="comprar col-5">
                         <form action="/products" method="GET">
                         <button class="comprarB" type="submit">Comprar</button>
                         </form>
@@ -86,8 +94,8 @@
             </section>
         </div>
     </div>
-<% }) %>
+    <% }) %>
+    <%- include("../partials/footer") %>
 </body>
 </html>
 
-<%- include("../partials/footer") %>

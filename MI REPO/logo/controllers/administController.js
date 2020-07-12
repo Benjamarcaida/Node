@@ -1,4 +1,6 @@
 const fs = require('fs');
+const db = require('../database/models');
+const {Op} = require('sequelize');
 //const path = require('path');
 
 //const productsFilePath = path.join(__dirname, './data/productos.json');

@@ -1,6 +1,9 @@
 const fs = require('fs');
 const path = require('path');
+let bcrypt = require('bcrypt')
 let { check, validationResult, body } = require ('express-validator')
+const db = require('../database/models');
+const {Op} = require('sequelize');
 
 const mainController = {
     home: function (req,res) {
@@ -19,18 +22,26 @@ const mainController = {
     },
     sendregister: function(req,res,next){
         let errors = validationResult(req);
+
+        let usuarios = JSON.parse(fs.readFileSync('./data/users.json', {encoding:'utf-8'}));
+        
+        let n = usuarios.length;
+        let userId = usuarios[n-1].id;
         if(errors.isEmpty()) {
-        usuario ={
+        usuario = {
+            id:userId + 1,
             email: req.body.email,
-            nombre: req.body.name,
-            apellido: req.body.secondname,
-            contrasena: req.body.password,
+            first_name: req.body.first_name,
+            last_name: req.body.last_name,
+            password: bcrypt.hashSync(req.body.password, 10),
+            image: req.files[0].filename,
+            category: req.body.category
         }
 
-        let usersJSON = fs.readFileSync('./data/usuarios.json', {encoding:'utf-8'});
+        let usersJSON = fs.readFileSync('./data/users.json', {encoding:'utf-8'});
         usersJS = JSON.parse(usersJSON);
         usersJS.push(usuario)
-        usersJSON = JSON.stringify(usersJS);
+        usersJSON = JSON.stringify(usersJS, null, 4);
         fs.writeFileSync('./data/users.json', usersJSON);
                 res.redirect('/')
          } else{
@@ -42,43 +53,50 @@ const mainController = {
     },
     sendlogin: function(req,res, next){
         let errors = validationResult(req);
-        let usersJSON = fs.readFileSync('./data/users.json',{encoding:'utf-8'})
-        usersJS = JSON.parse(usersJSON);
-        let userLog = false
-        usersJS.forEach((users) => {
-            if(users.email == req.body.email && users.password == req.body.password) {
-                    userLog = users; 
-                    req.session.userLog = userLog;
-                    console.log(req.session.userLog)
-                    console.log(userLog)
-                    res.locals.userLog = userLog;
-                    console.log(res.locals.userLog)
-                    res.redirect('/')
+        //verifico si hay errores
+        if(errors.isEmpty()) { // si NO hay errores
+            let usersJSON = fs.readFileSync('./data/users.json', { encoding: 'utf-8'});
+            let users;
+            if (usersJSON == "") {
+                users = [];
+            } else {
+                users = JSON.parse(usersJSON);
             }
-
-        });
-
-        if(userLog == false) {
-            return res.render('login', {errors : [
-                {msj : "Contraseña o email invalido"}
-            ]});
+            let usuarioALoguearse;
+    
+            for (let i = 0; i < users.length; i++) {
+                if (users[i].email == req.body.email) {  // si mail encontrado
+                    if (bcrypt.compareSync(req.body.password, users[i].password)) { // si pass encontrada
+                        usuarioALoguearse = users[i]; //encontre usuario a loguearse
+                        break;
+                    }
+                }
+            }
+            if(usuarioALoguearse == undefined) { //si NO se encontro a usuario
+                return res.render('login', {errors: [
+                    {msg: 'Credenciales inválidas'}
+                ]});
+            }
+            //guardar el usuario encontrado en session
+            req.session.usuarioLogueado = usuarioALoguearse;
+    
+            if (req.body.recordame != undefined) {
+                res.cookie('recordame', usuarioALoguearse.email, { maxAge: 86400000 });
+            }
+            //Usuario logueado
+            return res.redirect('/');
+        } else { //si hay errores
+            return res.render('login', {errors: errors.errors});
         }
+    },
+    infoUser : function(req, res, next) {
+        res.render("users")
+    },
+    logOut : function(req, res, next) {
+        req.session.destroy();
+        res.redirect("/");
+    }
 
-        
-
-        /*if(errors.isEmpty()) {
-        usuario = {
-            email: req.body.email,
-            contrasena: req.body.password
-        }
-        res.redirect('/')
-        } else {
-            res.render('login', {errors:errors.errors})
-        }*/
-   }, 
-   header : function(req, res, next) {
-
-   }
 
 }
 

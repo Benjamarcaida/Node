@@ -82,8 +82,8 @@
                 </div>
 
                 <div class="row">
-                    <section class="col-12">
-                        <h2><%=nombreGenero%></h2>
+                    <section class="col-2">
+                        <h2><%= nombreGenero %></h2>
                     </section>
     
                 </div>
@@ -92,13 +92,13 @@
                     <% for(let i = 0; i < genero.length; i++) { %>
                     <section class="cajaP col-xs-10 col-sm-5 col-lg-3">
                         <section class="col-12">
-                            <a href="/products/detalle/<%=genero[i].id%>"><img class="fotitos" src= <%= genero[i].foto %> alt="Campera"></a>
+                            <a href="/products/detalle/<%= genero[i].id %>"><img class="fotitos" src= <%= genero[i].image %> alt="Campera"></a>
                         </section>
                         <section class="nombreP col-12">
-                            <%= genero[i].nombre%>
+                            <%= genero[i].name %>
                             </section>
                         <section class="precioP col-12">
-                            $<%= genero[i].precio%>
+                            $<%= genero[i].price %>
                         </section>
                         <div class="row">
                             <button class="cora col-xs-10 offset-lg-1 col-lg-5" type="submit">Add to <svg class="bi bi-heart-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="white" xmlns="http://www.w3.org/2000/svg">

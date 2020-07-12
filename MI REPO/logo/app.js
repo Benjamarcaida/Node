@@ -12,7 +12,8 @@ var usersRouter = require('./routes/users');
 var carritoRouter = require('./routes/carrito');
 var productsRouter = require("./routes/products")
 var administRouter = require("./routes/administ");
-const e = require('express');
+//const e = require('express');
+var recordameMiddleware = require('./middlewares/recordameMiddleware');
 
 var app = express();
 
@@ -27,10 +28,10 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(methodOverride('_method'));
 app.use(session({secret : "Secreto"}));
-
+app.use(recordameMiddleware);
 
 app.use(function (req, res, next) {
-  res.locals.userLog = req.session.userLog
+  res.locals.userLog = req.session.usuarioLogueado
   next();
 })
 

@@ -1,14 +1,43 @@
 .base {
-    background-color: rgb(63, 62, 62);
+    background-color: rgb(119, 119, 119);
     color: white;
-    height: 360px;
 }
 
-h2 {
-    color: azure;
+.izquierda {
+    border: 2px solid black;
 }
 
-.info {
+.derecha {
+    padding: 0px;
+}
+
+section h2 {
+    color: black;
+    text-align: center;
+    padding-top: 20px;
+}
+
+section div div {
+    text-align: center;
+}
+
+.redes {
+    border: 2px solid black;
+    text-align: center;
+}
+
+.redessociales {
+    display: flex;
+    padding-bottom: 25px;
+
+}
+
+.contact {
+    border: 2px solid black;
+    text-align: center;
+}
+
+.contacto label {
     text-align: center;
 }
 
@@ -54,14 +83,19 @@ h2 {
     margin-bottom: 20px;
 }
 
-
-
-label {
-    margin-left: 15px;
+.def {
+    text-align: center;
 }
 
 .parte2 {
-    height: 100px;
     background-color: black;
     padding-top: 20px;
+}
+
+
+@media (min-width: 992px){
+    .contacto{
+        padding: 0px 10px;
+        display: flex;
+    }
 }

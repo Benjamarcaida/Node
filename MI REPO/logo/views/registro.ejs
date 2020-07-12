@@ -38,16 +38,25 @@
                   <% } %>
               </ul>
               <% } %>
-    <form method = "POST" action = '/users/register/'>
-        <label class = 'offset-1 col-10 offset-1'><h3>Nombre</h3></label>
-        <input class = 'offset-1 col-10 offset-1'type='text' name='name'>
-        <label class = 'offset-1 col-10 offset-1'><h3>Apellido</h3></label>
-        <input class = 'offset-1 col-10 offset-1'type='text' name='secondname'>
-        <label class = 'offset-1 col-10 offset-1' ><h3>Email</h3></label>
-        <input class = 'offset-1 col-10 offset-1'type='text' name='email'>
-        <label class='offset-1 col-10 offset-1'><h3>Contraseña</h3></label>
-        <input class = 'offset-1 col-10 offset-1'type='password' name='password'>
-        <button class ='offset-2 button col-8 offset-2' type='submit'><h5>Crear</h5></button>
+    <form method = "POST" action = '/users/register/'enctype='multipart/form-data' >
+        <label class = 'offset-1 col-6 col-sm-9 col-md-9 col-lg-9 col-xl-10 offset-1'><h3>Nombre</h3></label>
+        <input class = 'offset-1 col-6 col-sm-9 col-md-9 col-lg-9 col-xl-10 offset-1'type='text' name='first_name'>
+        <label class = 'offset-1 col-6 col-sm-9 col-md-9 col-lg-9 col-xl-10 offset-1'><h3>Apellido</h3></label>
+        <input class = 'offset-1 col-6 col-sm-9 col-md-9 col-lg-9 col-xl-10 offset-1'type='text' name='last_name'>
+        <label class = 'offset-1 col-6 col-sm-9 col-md-9 col-lg-9 col-xl-10 offset-1' ><h3>Email</h3></label>
+        <input class = 'offset-1 col-6 col-sm-9 col-md-9 col-lg-9 col-xl-10 offset-1'type='text' name='email'>
+        <label class='offset-1 col-6 col-sm-9 col-md-9 col-lg-9 col-xl-10 offset-1'><h3>Contraseña</h3></label>
+        <input class = 'offset-1 col-6 col-sm-9 col-md-9 col-lg-9 col-xl-10 offset-1'type='password' name='password'>
+        <h3 class='offset-1 col-6 col-sm-9 col-md-9 col-lg-9 col-xl-10 offset-1'>Category</h3>
+        <select  class = 'offset-1 col-6 col-sm-9 col-md-9 col-lg-9 col-xl-10 offset-1'name="category">
+            
+            <option value="buyer">Buyer</option>
+            <option value="admin">Admin</option>
+          </select>
+        
+        <label class = 'offset-1 col-6 col-sm-9 col-md-9 col-lg-9 col-xl-10 offset-1'for=''><h3>Avatar</h3></label>
+        <input class = 'offset-1 col-6 col-sm-9 col-md-9 col-lg-9 col-xl-10 offset-1'type='file' name='avatar'>
+        <button class = 'offset-1 col-6 col-sm-9 col-md-9 col-lg-9 col-xl-10 offset-1' type='submit'><h5>Crear</h5></button>
     </form>
     </div>
     </div>
